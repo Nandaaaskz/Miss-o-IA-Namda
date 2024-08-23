@@ -1,9 +1,10 @@
 :root {
-    --cor-fundo: #01080E;
-    --cor-principal: #0B0D20;
+    --cor-fundo: #000a20;
+    --cor-principal: #ddce59;
     --cor-secundaria: #212333;
-    --cor-destaque: #2BDEFD;
+    --cor-destaque: #000a20;
     --cor-texto: #D7F9FF;
+    --cor-perguntas: #000a20;
 }
 
 body {
@@ -22,11 +23,13 @@ body {
     max-width: 600px;
     text-align: center;
     padding: 20px;
+    border-radius: 35px;
 }
 
 .caixa-perguntas {
     margin-bottom: 15px;
     line-height: 1.5em;
+    color: var(--cor-perguntas);
 }
 
 h1 {

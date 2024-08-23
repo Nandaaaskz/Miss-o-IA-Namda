@@ -10,19 +10,19 @@ const perguntas = [
         enunciado: "Qual o maior macaco de todos?",
         alternativas: [
             {
-                texto: "A] Babuíno",
+                texto: "a. Babuíno",
                 afirmacao: "voce errou :(",
             },
             {
-                texto: "B] Orangotango",
+                texto: "b. Orangotango",
                 afirmacao: "voce errou lol",
             },
             {
-                texto: "C] Gorila",
+                texto: "c. Gorila",
                 afirmacao: "voce acertou, parabens",
             },
             {
-                texto: "D] Bugio",
+                texto: "d. Bugio",
                 afirmacao: "errou lmao",
             }
         ]
@@ -31,19 +31,19 @@ const perguntas = [
         enunciado: "Qual o nome do personagem da Disney que foi criado por gorilas desde a sua infância?",
         alternativas: [
             {
-                texto: "A] Mogli",
+                texto: "a. Mogli",
                 afirmacao: "voce errou :(",
             },
             {
-                texto: "B] Rodney",
+                texto: "b. Rodney",
                 afirmacao: "voce errou :(",
             },
             {
-                texto: "C] Dumbo",
+                texto: "c. Dumbo",
                 afirmacao: "voce errou :(",
             },
             {
-                texto: "D] Tarzan",
+                texto: "d. Tarzan",
                 afirmacao: "resposta correta",
             }
         ]
@@ -52,19 +52,19 @@ const perguntas = [
         enunciado: "Chipanzés são carnívoros ou vegetarianos?",
         alternativas: [
             {
-                texto: "A] Só comem frutas",
+                texto: "a. Só comem frutas",
                 afirmacao: "erro",
             },
             {
-                texto: "B] Só comem carne",
+                texto: "b. Só comem carne",
                 afirmacao: "errou lol",
             },
             {
-                texto: "C] Comem de tudo",
+                texto: "c. Comem de tudo",
                 afirmacao: "certo",
             },
             {
-                texto: "D] Passam fome",
+                texto: "d. Passam fome",
                 afirmacao: "? errou",
             }
         ]
@@ -73,19 +73,19 @@ const perguntas = [
         enunciado: "Qual é a espécie dos chimpanés?",
         alternativas: [
             {
-                texto: "A] Pitangus sulphuratus",
+                texto: "a. Pitangus sulphuratus",
                 afirmacao: "espécie do bem-te-vi, errou",
             },
             {
-                texto: "B] Pan troglodytes",
+                texto: "b. Pan troglodytes",
                 afirmacao: "ta serto",
             },
             {
-                texto: "C] Vampyroteuthis infernalis",
+                texto: "c. Vampyroteuthis infernalis",
                 afirmacao: "nao seu maluco",
             },
             {
-                texto: "D] Aedes aegypti",
+                texto: "d. Aedes aegypti",
                 afirmacao: "????????????????",
             }
         ]
@@ -94,19 +94,19 @@ const perguntas = [
         enunciado: "Qual o menor macaco?",
         alternativas: [
             {
-                texto: "A] Sagui-pigmeu",
+                texto: "a. Sagui-pigmeu",
                 afirmacao: " Afirmação ",
             },
             {
-                texto: "B] Lêmure",
+                texto: "b. Lêmure",
                 afirmacao: " Afirmação ",
             },
             {
-                texto: "C] Macaco-prego",
+                texto: "c. Macaco-prego",
                 afirmacao: " Afirmação ",
             },
             {
-                texto: "D] Mico-leão-dourado",
+                texto: "d. Mico-leão-dourado",
                 afirmacao: " Afirmação ",
             }
         ]
@@ -133,3 +133,24 @@ const perguntas = [
         ]
     },
 ];
+
+let atual = 0; 
+let perguntaAtual; 
+
+function mostraPergunta(){
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    mostraAlternativas();
+
+}
+
+function mostraAlternativas(){
+    for (const alternativa of perguntaAtual.alternativas){
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        caixaAlternativas.appendChild(botaoAlternativas);
+    }
+}
+
+mostraPergunta();
+
