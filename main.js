@@ -2,7 +2,7 @@ const caixaPrincipal = document.querySelector(".caixa-principal")
 const caixaPerguntas = document.querySelector(".caixa-perguntas")
 const caixaAlternativas = document.querySelector(".caixa-alternativas")
 const caixaResultado = document.querySelector(".caixa-resultado")
-const TextoResultado = document.querySelector(".texto-resultado")
+const textoResultado = document.querySelector(".texto-resultado")
 
 
 const perguntas = [
@@ -11,19 +11,19 @@ const perguntas = [
         alternativas: [
             {
                 texto: "a. Babuíno",
-                afirmacao: "voce errou :(",
+                afirmacao: "Pergunta 1 - Resposta marcada: a. Babuíno. Respota correta: c. Gorila. ",
             },
             {
                 texto: "b. Orangotango",
-                afirmacao: "voce errou lol",
+                afirmacao: "Pergunta 1 - Resposta marcada: b. Orangotango. Respota correta: c. Gorila. ",
             },
             {
                 texto: "c. Gorila",
-                afirmacao: "voce acertou, parabens",
+                afirmacao: "Pergunta 1 - Resposta marcada: c. Gorila. Respota correta, Parabéns! ",
             },
             {
                 texto: "d. Bugio",
-                afirmacao: "errou lmao",
+                afirmacao: "Pergunta 1 - Resposta marcada: d. Bugio. Respota correta: c. Gorila. ",
             }
         ]
     },
@@ -112,23 +112,23 @@ const perguntas = [
         ]
     },
     {
-        enunciado: " Pergunta?",
+        enunciado: "Só existem cerca de 3000 micos-leões-dourados na natureza devido a extinção :(",
         alternativas: [
             {
-                texto: " Texto/resposta",
-                afirmacao: " Afirmação ",
+                texto: "a. Isso é triste :(",
+                afirmacao: "certo",
             },
             {
-                texto: " Texto/resposta ",
-                afirmacao: " Afirmação ",
+                texto: "b. Isso é paia :(",
+                afirmacao: "certo",
             },
             {
-                texto: " Texto/resposta ",
-                afirmacao: " Afirmação ",
+                texto: "c. fodasekkk",
+                afirmacao: "ERRADO ERRADOO",
             },
             {
-                texto: " Texto/resposta ",
-                afirmacao: " Afirmação ",
+                texto: "d. Isso é complicado :(",
+                afirmacao: "certo",
             }
         ]
     },
@@ -136,10 +136,16 @@ const perguntas = [
 
 let atual = 0; 
 let perguntaAtual; 
+let historiaFinal = "";
 
 function mostraPergunta(){
+    if(atual >= perguntas.length){
+        mostraResultado();
+        return;
+    }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = "";
     mostraAlternativas();
 
 }
@@ -148,9 +154,28 @@ function mostraAlternativas(){
     for (const alternativa of perguntaAtual.alternativas){
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click",() => respostaSelecionada(alternativa));
         caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
 
+function respostaSelecionada(opcaoSelecionada){
+    const afirmacoes = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacoes + "";
+    atual++;
+    mostraPergunta();
+}
+
+function mostraResultado(){
+    caixaPerguntas.textContent = "congratulations, você terminou o show do macaco.";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
+}
+
 mostraPergunta();
+
+
+
+
+
 
