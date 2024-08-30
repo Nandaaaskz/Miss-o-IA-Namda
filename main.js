@@ -11,19 +11,19 @@ const perguntas = [
         alternativas: [
             {
                 texto: "a. Babuíno",
-                afirmacao: "Pergunta 1 - Resposta marcada: a. Babuíno. Respota correta: c. Gorila. ",
+                afirmacao: "Pergunta 1 errada - marcaco: Babuíno. ",
             },
             {
                 texto: "b. Orangotango",
-                afirmacao: "Pergunta 1 - Resposta marcada: b. Orangotango. Respota correta: c. Gorila. ",
+                afirmacao: "Pergunta 1 errada - marcado: Orangotango. ",
             },
             {
                 texto: "c. Gorila",
-                afirmacao: "Pergunta 1 - Resposta marcada: c. Gorila. Respota correta, Parabéns! ",
+                afirmacao: "Pergunta 1 correta, parabéns. ",
             },
             {
                 texto: "d. Bugio",
-                afirmacao: "Pergunta 1 - Resposta marcada: d. Bugio. Respota correta: c. Gorila. ",
+                afirmacao: "Pergunta 1 errada - marcado: Bugio. ",
             }
         ]
     },
@@ -32,19 +32,19 @@ const perguntas = [
         alternativas: [
             {
                 texto: "a. Mogli",
-                afirmacao: "voce errou :(",
+                afirmacao: "Pergunta 2 errada - marcado: Mogli. ",
             },
             {
                 texto: "b. Rodney",
-                afirmacao: "voce errou :(",
+                afirmacao: "Pergunta 2 errada - marcado: Rodney. ",
             },
             {
                 texto: "c. Dumbo",
-                afirmacao: "voce errou :(",
+                afirmacao: "Pergunta 2 errada - marcado: Dumbo (?????). ",
             },
             {
                 texto: "d. Tarzan",
-                afirmacao: "resposta correta",
+                afirmacao: "Pergunta 2 correta, é o Tarzan louco mesmo ;). ",
             }
         ]
     },
@@ -53,19 +53,19 @@ const perguntas = [
         alternativas: [
             {
                 texto: "a. Só comem frutas",
-                afirmacao: "erro",
+                afirmacao: "Chipanzés comem de tudo. ",
             },
             {
                 texto: "b. Só comem carne",
-                afirmacao: "errou lol",
+                afirmacao: "Chipanzés comem de tudo. ",
             },
             {
                 texto: "c. Comem de tudo",
-                afirmacao: "certo",
+                afirmacao: "Chipanzés comem de tudo mesmo, pergunta 3 correta. ",
             },
             {
-                texto: "d. Passam fome",
-                afirmacao: "? errou",
+                texto: "d. قرد",
+                afirmacao: "لماذا أجبت على السؤال باللغة العربية أيها المهرج؟ ",
             }
         ]
     },
@@ -74,19 +74,19 @@ const perguntas = [
         alternativas: [
             {
                 texto: "a. Pitangus sulphuratus",
-                afirmacao: "espécie do bem-te-vi, errou",
+                afirmacao: "Pitangus sulphuratus é a espécie do bem-te-vi, errou haha lol. ",
             },
             {
                 texto: "b. Pan troglodytes",
-                afirmacao: "ta serto",
+                afirmacao: "Acertou a pergunta da espécie dos manos monkeys. ",
             },
             {
                 texto: "c. Vampyroteuthis infernalis",
-                afirmacao: "nao seu maluco",
+                afirmacao: "Engraçadinho, Vampyroteuthis infernalis é a espécie da lula-vampira-do-inferno. ",
             },
             {
                 texto: "d. Aedes aegypti",
-                afirmacao: "????????????????",
+                afirmacao: "???????????????? (nada será comentado sobre a pergunta da espécie). ",
             }
         ]
     },
@@ -95,19 +95,19 @@ const perguntas = [
         alternativas: [
             {
                 texto: "a. Sagui-pigmeu",
-                afirmacao: " Afirmação ",
+                afirmacao: "O menor macaco é o Sagui-pigmeu, resposta correta. ",
             },
             {
                 texto: "b. Lêmure",
-                afirmacao: " Afirmação ",
+                afirmacao: "Menor macaco - Sagui-pigmeu (resposta errada). ",
             },
             {
                 texto: "c. Macaco-prego",
-                afirmacao: " Afirmação ",
+                afirmacao: "Menor macaco - Sagui-pigmeu (resposta errada). ",
             },
             {
                 texto: "d. Mico-leão-dourado",
-                afirmacao: " Afirmação ",
+                afirmacao: "Menor macaco - Sagui-pigmeu (resposta errada). ",
             }
         ]
     },
@@ -116,19 +116,19 @@ const perguntas = [
         alternativas: [
             {
                 texto: "a. Isso é triste :(",
-                afirmacao: "certo",
+                afirmacao: "Você acertou a última pergunta (obrigatório).",
             },
             {
                 texto: "b. Isso é paia :(",
-                afirmacao: "certo",
+                afirmacao: "Você acertou a última pergunta (obrigatório).",
             },
             {
                 texto: "c. fodasekkk",
-                afirmacao: "ERRADO ERRADOO",
+                afirmacao: "conseguiu errar a única pergunta inerrável (vergonha).",
             },
             {
                 texto: "d. Isso é complicado :(",
-                afirmacao: "certo",
+                afirmacao: "Você acertou a última pergunta (obrigatório).",
             }
         ]
     },
@@ -167,7 +167,7 @@ function respostaSelecionada(opcaoSelecionada){
 }
 
 function mostraResultado(){
-    caixaPerguntas.textContent = "congratulations, você terminou o show do macaco.";
+    caixaPerguntas.textContent = "Congratulations, você terminou o show do macaco.";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
